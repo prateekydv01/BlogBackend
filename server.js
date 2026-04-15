@@ -35,9 +35,9 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/blogplatf
   .then(() => console.log('✅ MongoDB connected'))
   .catch(err => console.error('MongoDB error:', err));
 
-app.use('/api/auth', authRoutes);
-app.use('/api/posts', postRoutes);
-app.use('/api/comments', commentRoutes);
+app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/posts', postRoutes);
+app.use('/api/v1/comments', commentRoutes);
 
 app.get('/health', (req, res) => res.json({ status: 'OK' }));
 
